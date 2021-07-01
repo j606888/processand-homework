@@ -42,5 +42,5 @@ const mapFlatToDeepTree = (flatTree) => {
   return [root]
 }
 
-const constdeepTree = mapFlatToDeepTree(flatTree)
-console.log(JSON.stringify(constdeepTree, null, 2))
+const deepTree = mapFlatToDeepTree(flatTree)
+console.log(JSON.stringify(deepTree, null, 2))
