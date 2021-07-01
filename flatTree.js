@@ -24,10 +24,6 @@ const flatTree = [
 ]
 
 const mapFlatToDeepTree = (flatTree) => {
-  const copyTree = _.cloneDeep(flatTree)
-  const root = _.find(copyTree, { id: "root" })
-  const result = [root]
-
   const buildChildren = (id) => {
     const target = _.find(copyTree, { id })
     const children = _.map(target.children, childId => {
@@ -39,8 +35,11 @@ const mapFlatToDeepTree = (flatTree) => {
     return children
   }
 
+  const copyTree = _.cloneDeep(flatTree)
+  const root = _.find(copyTree, { id: "root" })
   root.children = buildChildren(root.id)
-  return result
+  
+  return [root]
 }
 
 const constdeepTree = mapFlatToDeepTree(flatTree)
