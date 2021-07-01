@@ -30,7 +30,7 @@ const mapFlatToDeepTree = (flatTree) => {
       const child = _.find(copyTree, { id: childId })
       child.children = buildChildren(childId) 
       return child
-    }) || []
+    })
 
     return children
   }
